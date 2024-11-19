@@ -1,0 +1,33 @@
+<%- include('layouts/layout') %>
+    <h2>Job Listings</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Location</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% jobs.forEach(job=> { %>
+                <tr>
+                    <td><a href="/jobs/<%= job.id %>">
+                            <%= job.jobDesignation %>
+                        </a></td>
+                    <td>
+                        <%= job.companyName %>
+                    </td>
+                    <td>
+                        <%= job.jobLocation %>
+                    </td>
+                    <td>
+                        <form action="/jobs/<%= job.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+    <a href="/jobs/new">Post a New Job</a>
