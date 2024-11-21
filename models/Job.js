@@ -30,8 +30,8 @@ class Job {
     }
 
     static deleteJob(id) {
-        jobs = jobs.filter(job => job.id !== id);
-    }
+    jobs = jobs.filter(job => job.id !== id); // Use the correct filtering logic
+}
 }
 
 module.exports = Job;

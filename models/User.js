@@ -16,8 +16,8 @@ class User {
     }
 
     static findUser ByEmail(email) {
-        return users.find(user => user.email === email);
-    }
+    return users.find(user => user.email === email);
+  }
 }
 
 module.exports = User;

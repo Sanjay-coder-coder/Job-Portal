@@ -2,7 +2,7 @@ const User = require('../models/User');
 
 exports.login = (req, res) => {
     const { email, password } = req.body;
-    const user = User.findUser ByEmail(email);
+    const user = User.findUser ByEmail(email); // Corrected method name
     
     if (user && user.password === password) {
         req.session.userId = user.id; // Store user ID in session
